@@ -27,6 +27,7 @@ public class PullToRefreshListView extends ListView implements OnScrollListener 
     private static final int PULL_TO_REFRESH = 2;
     private static final int RELEASE_TO_REFRESH = 3;
     private static final int REFRESHING = 4;
+    
 
     private static final String TAG = "PullToRefreshListView";
 
