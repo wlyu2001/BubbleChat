@@ -1,4 +1,4 @@
-package com.warting.bubbles;
+package com.wlyu.bubbles;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,6 +22,13 @@ public class DiscussArrayAdapter extends ArrayAdapter<OneComment> {
 	private LinearLayout wrapper;
 	private ImageView imageViewLeft;
 	private ImageView imageViewRight;
+	
+
+	
+	public void add(int ind, OneComment object) {
+		countries.add(ind,object);
+		super.add(object);
+	}
 	@Override
 	public void add(OneComment object) {
 		countries.add(0,object);

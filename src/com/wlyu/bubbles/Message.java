@@ -1,4 +1,4 @@
-package com.warting.bubbles;
+package com.wlyu.bubbles;
 
 
 public class Message {

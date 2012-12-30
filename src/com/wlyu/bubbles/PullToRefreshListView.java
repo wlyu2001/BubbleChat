@@ -1,4 +1,4 @@
-package com.warting.bubbles;
+package com.wlyu.bubbles;
 
 
 import android.content.Context;
@@ -19,7 +19,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.AbsListView.OnScrollListener;
 
-import com.warting.bubbles.R;
+import com.wlyu.bubbles.R;
 
 public class PullToRefreshListView extends ListView implements OnScrollListener {
 

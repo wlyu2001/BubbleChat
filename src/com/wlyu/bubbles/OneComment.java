@@ -1,4 +1,4 @@
-package com.warting.bubbles;
+package com.wlyu.bubbles;
 
 import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
