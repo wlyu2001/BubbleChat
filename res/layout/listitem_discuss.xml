@@ -13,15 +13,26 @@
         	android:layout_width="30dip"
         	android:layout_height="wrap_content"
         	android:paddingTop="10dip"/>
-        <TextView
-            android:id="@+id/comment"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="5dip"
+        <LinearLayout 
             android:background="@drawable/bubble_yellow"
-            android:text="Hello bubbles!"
-            android:textColor="@android:color/primary_text_light" />
+            android:id="@+id/background"
+            android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:orientation="vertical">
+            <TextView
+	            android:id="@+id/comment"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_gravity="center"
+	            android:layout_margin="5dip"
+	            android:textColor="@android:color/primary_text_light" />
+            <LinearLayout 
+	            android:id="@+id/image_row"
+	            android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"/>
+            
+        </LinearLayout>
+
         <ImageView         
             android:id="@+id/avatarRight"
         	android:layout_width="30dip"

@@ -11,7 +11,7 @@ import com.wlyu.bubbles.PullToRefreshListView.OnRefreshListener;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Random;
+import java.util.HashMap;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
@@ -21,18 +21,12 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import android.app.Activity;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.View.OnKeyListener;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ListView;
-import android.widget.Toast;
-import de.svenjacobs.loremipsum.LoremIpsum;
 
 public class HelloBubblesActivity extends Activity {
 	private com.wlyu.bubbles.DiscussArrayAdapter adapter;
@@ -69,7 +63,7 @@ public class HelloBubblesActivity extends Activity {
 			@Override
 			public void onClick(View arg0) {
 				int count=adapter.getCount();
-				adapter.add(count, new OneComment(false, editText1.getText().toString(), imageRight));
+				adapter.add(count, new OneComment(false, editText1.getText().toString(), imageRight, new HashMap<String, String>()));
 				lv.setSelection(count);
 				editText1.setText("");
 			}
@@ -81,7 +75,7 @@ public class HelloBubblesActivity extends Activity {
 	}
 
 	private void addItems() {
-		String url="http://bubble-chat.appspot.com/bubblechat1";
+		String url="https://bubble-chat.appspot.com/bubblechat1";
 		message.clear();
 		new DownloadFilesTask().execute(url, null, null);
 	}
@@ -115,9 +109,9 @@ public class HelloBubblesActivity extends Activity {
           
   		  for(Message msg:message){
   			  if(msg.left)
-  				  adapter.add(new OneComment(msg.left, msg.text, imageLeft));
+  				  adapter.add(new OneComment(msg.left, msg.text, imageLeft, msg.pictures));
   			  else
-  				  adapter.add(new OneComment(msg.left, msg.text, imageRight));
+  				  adapter.add(new OneComment(msg.left, msg.text, imageRight, msg.pictures));
 		  }
   		  lv.onRefreshComplete();
   		  
