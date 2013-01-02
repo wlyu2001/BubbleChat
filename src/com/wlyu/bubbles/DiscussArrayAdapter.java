@@ -106,9 +106,6 @@ public class DiscussArrayAdapter extends ArrayAdapter<OneComment> {
 		return row;
 	}
 
-	public Bitmap decodeToBitmap(byte[] decodedByte) {
-		return BitmapFactory.decodeByteArray(decodedByte, 0, decodedByte.length);
-	}
 	
     static class ViewHolder {
     	LinearLayout wrapper;
